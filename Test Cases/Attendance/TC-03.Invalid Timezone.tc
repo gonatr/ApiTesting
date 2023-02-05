@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC-03.Invalid Timezone</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>49243bb5-3eb9-4350-a979-d9d644d2373e</testCaseGuid>
+</TestCaseEntity>

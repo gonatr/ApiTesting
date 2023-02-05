@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC-05.Invalid User Login</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>b9a78287-5269-4723-8a36-d5efe7d7e1ba</testCaseGuid>
+</TestCaseEntity>
