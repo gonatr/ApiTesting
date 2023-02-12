@@ -84,6 +84,15 @@ import internal.GlobalVariable as GlobalVariable
 
 RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
 
-ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()</verificationScript>
+ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
+
+
+
+WS.verifyResponseStatusCode(response, 200)
+
+assertThat(response.getStatusCode()).isEqualTo(200)
+
+
+WS.verifyElementPropertyValue(response, 'data[0].userName', 'Admin')</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>

@@ -23,7 +23,54 @@ WS.verifyResponseStatusCode(response, 200)
 
 WS.verifyElementPropertyValue(response, 'login', true)
 
-WS.verifyElementPropertyValue(response, 'user.userName', 'tester')
+WS.verifyElementPropertyValue(response, 'user.userName', 'tonyaUV')
 
-WS.verifyElementPropertyValue(response, 'user.userRole', 'Admin')
+WS.verifyElementPropertyValue(response, 'user.userRole', 'ESS')
+
+String jss = """
+	{
+	"\$schema": "https://json-schema.org/draft/2019-09/schema",
+	"\$id": "http://example.com/example.json",
+	"type": "object",
+	"required": [
+		"login",
+		"user"
+	],
+	"properties": {
+		"login": {
+			"type": "boolean"
+		},
+		"user": {
+			"type": "object",
+			"required": [
+				"userName",
+				"userRole",
+				"status",
+				"employeeName",
+				"employeeId"
+			],
+			"properties": {
+				"userName": {
+					"type": "string"
+				},
+				"userRole": {
+					"type": "string"
+				},
+				"status": {
+					"type": "string"
+				},
+				"employeeName": {
+					"type": "string"
+				},
+				"employeeId": {
+					"type": "string"
+				}
+			}
+		}
+	}
+}
+
+"""
+
+WS.validateJsonAgainstSchema(response, jss)
 

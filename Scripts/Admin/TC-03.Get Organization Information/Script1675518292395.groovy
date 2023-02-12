@@ -25,3 +25,90 @@ WS.verifyElementPropertyValue(response, 'data.id', 1)
 
 WS.verifyElementPropertyValue(response, 'data.name', 'Sekolah Digital Cilsy')
 
+String jss = """
+	{
+	"\$schema": "https://json-schema.org/draft/2019-09/schema",
+	"\$id": "http://example.com/example.json",
+	"type": "object",
+	"required": [
+		"data",
+		"rels"
+	],
+	"properties": {
+		"data": {
+			"type": "object",
+			"required": [
+				"id",
+				"name",
+				"taxId",
+				"registraionNumber",
+				"phone",
+				"fax",
+				"email",
+				"country",
+				"province",
+				"city",
+				"zipCode",
+				"street1",
+				"street2",
+				"note",
+				"numberOfEmployees"
+			],
+			"properties": {
+				"id": {
+					"type": "string"
+				},
+				"name": {
+					"type": "string"
+				},
+				"taxId": {
+					"type": "null"
+				},
+				"registraionNumber": {
+					"type": "null"
+				},
+				"phone": {
+					"type": "null"
+				},
+				"fax": {
+					"type": "null"
+				},
+				"email": {
+					"type": "null"
+				},
+				"country": {
+					"type": "string"
+				},
+				"province": {
+					"type": "null"
+				},
+				"city": {
+					"type": "null"
+				},
+				"zipCode": {
+					"type": "null"
+				},
+				"street1": {
+					"type": "null"
+				},
+				"street2": {
+					"type": "null"
+				},
+				"note": {
+					"type": "null"
+				},
+				"numberOfEmployees": {
+					"type": "integer"
+				}
+			}
+		},
+		"rels": {
+			"type": "array",
+			"items": {}
+		}
+	}
+}
+"""
+
+WS.validateJsonAgainstSchema(response, jss)
+

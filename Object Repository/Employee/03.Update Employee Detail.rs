@@ -19,54 +19,22 @@
    <followRedirects>false</followRedirects>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;contentType&quot;: &quot;multipart/form-data&quot;,
+  &quot;contentType&quot;: &quot;application/x-www-form-urlencoded&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;,
   &quot;parameters&quot;: [
     {
-      &quot;name&quot;: &quot;id&quot;,
-      &quot;value&quot;: &quot;34&quot;,
-      &quot;type&quot;: &quot;Text&quot;,
-      &quot;contentType&quot;: &quot;&quot;
-    },
-    {
-      &quot;name&quot;: &quot;firstName&quot;,
-      &quot;value&quot;: &quot;Clause&quot;,
-      &quot;type&quot;: &quot;Text&quot;,
-      &quot;contentType&quot;: &quot;&quot;
-    },
-    {
-      &quot;name&quot;: &quot;middleName&quot;,
-      &quot;value&quot;: &quot;Ult&quot;,
-      &quot;type&quot;: &quot;Text&quot;,
-      &quot;contentType&quot;: &quot;&quot;
-    },
-    {
-      &quot;name&quot;: &quot;lastName&quot;,
-      &quot;value&quot;: &quot;Van&quot;,
-      &quot;type&quot;: &quot;Text&quot;,
-      &quot;contentType&quot;: &quot;&quot;
-    },
-    {
-      &quot;name&quot;: &quot;code&quot;,
-      &quot;value&quot;: &quot;0023&quot;,
-      &quot;type&quot;: &quot;Text&quot;,
-      &quot;contentType&quot;: &quot;&quot;
-    },
-    {
       &quot;name&quot;: &quot;nationality&quot;,
-      &quot;value&quot;: &quot;Indonesia&quot;,
-      &quot;type&quot;: &quot;Text&quot;,
-      &quot;contentType&quot;: &quot;&quot;
+      &quot;value&quot;: &quot;Indonesian&quot;
     }
   ]
 }</httpBodyContent>
-   <httpBodyType>form-data</httpBodyType>
+   <httpBodyType>x-www-form-urlencoded</httpBodyType>
    <httpHeaderProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>Content-Type</name>
       <type>Main</type>
-      <value>multipart/form-data</value>
+      <value>application/x-www-form-urlencoded</value>
       <webElementGuid>40753bc7-325d-4cae-9ecc-62d11a178a6b</webElementGuid>
    </httpHeaderProperties>
    <httpHeaderProperties>
@@ -81,7 +49,7 @@
    <maxResponseSize>-1</maxResponseSize>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>PUT</restRequestMethod>
-   <restUrl>${GlobalVariable.baseUrl_cilsy}/api/v1/employee/34</restUrl>
+   <restUrl>${GlobalVariable.baseUrl_cilsy}/api/v1/employee/116</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>

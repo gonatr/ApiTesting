@@ -21,13 +21,63 @@ response = WS.sendRequest(findTestObject('Admin/01.Get Users'))
 
 WS.verifyResponseStatusCode(response, 200)
 
-WS.verifyElementPropertyValue(response, 'data.userName[3]', 'tester')
+WS.verifyElementPropertyValue(response, 'data[0].userName', 'Admin')
 
-WS.verifyElementPropertyValue(response, 'data.userRole[3]', 'ESS')
+WS.verifyElementPropertyValue(response, 'data[0].userRole', 'Admin')
 
-WS.verifyElementPropertyValue(response, 'data.status[3]', 'Enabled')
+WS.verifyElementPropertyValue(response, 'data[0].status', 'Enabled')
 
-WS.verifyElementPropertyValue(response, 'data.employeeName[3]', 'Tonya Ult Van')
+WS.verifyElementPropertyValue(response, 'data[0].employeeName', 'Boss Besar (Past Employee)')
 
-WS.verifyElementPropertyValue(response, 'data.employeeId[3]', 16)
+WS.verifyElementPropertyValue(response, 'data[0].employeeId', 1)
+
+String jss = """
+	{
+	"\$schema": "https://json-schema.org/draft/2019-09/schema",
+	"\$id": "http://example.com/example.json",
+	"type": "object",
+	"required": [
+		"data",
+		"rels"
+	],
+	"properties": {
+		"data": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"required": [
+					"userName",
+					"userRole",
+					"status",
+					"employeeName",
+					"employeeId"
+				],
+				"properties": {
+					"userName": {
+						"type": "string"
+					},
+					"userRole": {
+						"type": "string"
+					},
+					"status": {
+						"type": "string"
+					},
+					"employeeName": {
+						"type": "string"
+					},
+					"employeeId": {
+						"type": "string"
+					}
+				}
+			}
+		},
+		"rels": {
+			"type": "array",
+			"items": {}
+		}
+	}
+}
+"""
+
+WS.validateJsonAgainstSchema(response, jss)
 

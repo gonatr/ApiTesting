@@ -69,7 +69,7 @@
    <maxResponseSize>-1</maxResponseSize>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>POST</restRequestMethod>
-   <restUrl>${GlobalVariable.baseUrl_cilsy}/api/v1/employee/27/action/terminate</restUrl>
+   <restUrl>${GlobalVariable.baseUrl_cilsy}/api/v1/employee/72/action/terminate</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>

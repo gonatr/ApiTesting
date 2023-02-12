@@ -24,7 +24,7 @@
   &quot;parameters&quot;: [
     {
       &quot;name&quot;: &quot;firstName&quot;,
-      &quot;value&quot;: &quot;Senja&quot;,
+      &quot;value&quot;: &quot;Megan&quot;,
       &quot;type&quot;: &quot;Text&quot;,
       &quot;contentType&quot;: &quot;&quot;
     },
@@ -42,7 +42,7 @@
     },
     {
       &quot;name&quot;: &quot;code&quot;,
-      &quot;value&quot;: &quot;0023&quot;,
+      &quot;value&quot;: &quot;0027&quot;,
       &quot;type&quot;: &quot;Text&quot;,
       &quot;contentType&quot;: &quot;&quot;
     }
@@ -69,7 +69,7 @@
    <maxResponseSize>-1</maxResponseSize>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>POST</restRequestMethod>
-   <restUrl>${GlobalVariable.baseUrl_cilsy}/api/v1/employee/1</restUrl>
+   <restUrl>${GlobalVariable.baseUrl_cilsy}/api/v1/employee/0027</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>

@@ -24,7 +24,7 @@
   &quot;parameters&quot;: [
     {
       &quot;name&quot;: &quot;nationality&quot;,
-      &quot;value&quot;: &quot;Indian&quot;
+      &quot;value&quot;: &quot;Indonesian&quot;
     }
   ]
 }</httpBodyContent>

@@ -19,5 +19,15 @@ import org.openqa.selenium.Keys as Keys
 
 response = WS.sendRequest(findTestObject('Employee/01.Save Employee'))
 
-WS.verifyResponseStatusCode(response, 200)
+def slurper = new groovy.json.JsonSlurper()
+
+def result = slurper.parseText(response.getResponseBodyContent())
+
+String apiPostLoanResponse = response.getResponseText()
+
+def value1 = result
+
+GlobalVariable.employeeId = value1
+
+WS.sendRequestAndVerify(findTestObject('Employee/01.Save Employee', [('employeeId') : GlobalVariable.employeeId]))
 

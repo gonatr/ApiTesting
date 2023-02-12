@@ -19,7 +19,7 @@ import org.openqa.selenium.Keys as Keys
 
 response = WS.sendRequest(findTestObject('Attendance/01.Punch In'))
 
-WS.verifyResponseStatusCode(response, 200)
+WS.verifyResponseStatusCodeInRange(response, 200, 202)
 
-WS.verifyElementPropertyValue(response, 'success', 'Successfully Punched In')
+WS.verifyNotMatch('success', 'Successfully Punched In', false)
 

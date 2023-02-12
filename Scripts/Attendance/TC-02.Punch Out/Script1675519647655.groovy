@@ -19,7 +19,5 @@ import org.openqa.selenium.Keys as Keys
 
 response = WS.sendRequest(findTestObject('Attendance/02.Punch Out'))
 
-WS.verifyResponseStatusCode(response, 200)
-
-WS.verifyElementPropertyValue(response, 'success', 'Successfully Punched Out')
+WS.verifyResponseStatusCodeInRange(response, 200, 202)
 

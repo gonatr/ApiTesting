@@ -21,38 +21,7 @@
    <httpBodyContent>{
   &quot;contentType&quot;: &quot;multipart/form-data&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;,
-  &quot;parameters&quot;: [
-    {
-      &quot;name&quot;: &quot;id&quot;,
-      &quot;value&quot;: &quot;34&quot;,
-      &quot;type&quot;: &quot;Text&quot;,
-      &quot;contentType&quot;: &quot;&quot;
-    },
-    {
-      &quot;name&quot;: &quot;firstName&quot;,
-      &quot;value&quot;: &quot;Claus&quot;,
-      &quot;type&quot;: &quot;Text&quot;,
-      &quot;contentType&quot;: &quot;&quot;
-    },
-    {
-      &quot;name&quot;: &quot;middleName&quot;,
-      &quot;value&quot;: &quot;Ult&quot;,
-      &quot;type&quot;: &quot;Text&quot;,
-      &quot;contentType&quot;: &quot;&quot;
-    },
-    {
-      &quot;name&quot;: &quot;lastName&quot;,
-      &quot;value&quot;: &quot;Van&quot;,
-      &quot;type&quot;: &quot;Text&quot;,
-      &quot;contentType&quot;: &quot;&quot;
-    },
-    {
-      &quot;name&quot;: &quot;code&quot;,
-      &quot;value&quot;: &quot;0023&quot;,
-      &quot;type&quot;: &quot;Text&quot;,
-      &quot;contentType&quot;: &quot;&quot;
-    }
-  ]
+  &quot;parameters&quot;: []
 }</httpBodyContent>
    <httpBodyType>form-data</httpBodyType>
    <httpHeaderProperties>
@@ -75,7 +44,7 @@
    <maxResponseSize>-1</maxResponseSize>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>GET</restRequestMethod>
-   <restUrl>${GlobalVariable.baseUrl_cilsy}/api/v1/employee/34</restUrl>
+   <restUrl>${GlobalVariable.baseUrl_cilsy}/api/v1/employee/116</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -96,6 +65,14 @@ import internal.GlobalVariable as GlobalVariable
 
 RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
 
-ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()</verificationScript>
+ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
+
+WS.verifyResponseStatusCode(response, 200)
+assertThat(response.getStatusCode()).isEqualTo(200)
+WS.verifyElementPropertyValue(response, 'data.employeeId', '116')
+WS.verifyElementPropertyValue(response, 'data.firstName', 'Megan')
+WS.verifyElementPropertyValue(response, 'data.lastName', &quot;Van&quot;)
+
+</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>

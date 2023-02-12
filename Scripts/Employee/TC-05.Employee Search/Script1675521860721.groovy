@@ -21,5 +21,106 @@ response = WS.sendRequest(findTestObject('Employee/05.Employee Search'))
 
 WS.verifyResponseStatusCode(response, 200)
 
-WS.verifyElementPropertyValue(response, 'data.firstName[16]', 'Senja')
+WS.verifyElementPropertyValue(response, 'data[0].firstName', 'Megan')
+
+String jschema = """
+{
+    "\$schema": "https://json-schema.org/draft/2019-09/schema",
+    "\$id": "http://example.com/example.json",
+    "type": "object",
+    "required": [
+        "data",
+        "rels"
+    ],
+    "properties": {
+        "data": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "firstName",
+                    "middleName",
+                    "lastName",
+                    "code",
+                    "employeeId",
+                    "fullName",
+                    "status",
+                    "dob",
+                    "driversLicenseNumber",
+                    "licenseExpiryDate",
+                    "maritalStatus",
+                    "gender",
+                    "otherId",
+                    "nationality",
+                    "unit",
+                    "jobTitle",
+                    "supervisor"
+                ],
+                "properties": {
+                    "firstName": {
+                        "type": "string"
+                    },
+                    "middleName": {
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "type": "string"
+                    },
+                    "code": {
+                        "type": "string"
+                    },
+                    "employeeId": {
+                        "type": "string"
+                    },
+                    "fullName": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "null"
+                    },
+                    "dob": {
+                        "type": "null"
+                    },
+                    "driversLicenseNumber": {
+                        "type": "string"
+                    },
+                    "licenseExpiryDate": {
+                        "type": "null"
+                    },
+                    "maritalStatus": {
+                        "type": "null"
+                    },
+                    "gender": {
+                        "type": "null"
+                    },
+                    "otherId": {
+                        "type": "string"
+                    },
+                    "nationality": {
+                        "type": "null"
+                    },
+                    "unit": {
+                        "type": "null"
+                    },
+                    "jobTitle": {
+                        "type": "null"
+                    },
+                    "supervisor": {
+                        "type": "null"
+                    }
+                }
+            }
+        },
+        "rels": {
+            "type": "array",
+            "items": {}
+        }
+    }
+}
+"""
+
+//WS.validateJsonAgainstSchema(response,jschema)
+WS.validateJsonAgainstSchema(response, jschema, FailureHandling.STOP_ON_FAILURE)
+
+//WS.validateJsonAgainstSchema(response, jshema, FailureHandling.STOP_ON_FAILURE)
 

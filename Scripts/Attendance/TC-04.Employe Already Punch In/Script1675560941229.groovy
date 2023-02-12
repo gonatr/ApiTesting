@@ -21,7 +21,7 @@ response = WS.sendRequest(findTestObject('Attendance/04.Punch In - Invalid'))
 
 WS.verifyResponseStatusCode(response, 202)
 
-WS.verifyElementPropertyValue(response, 'error.status', '202')
+WS.verifyResponseStatusCodeInRange(response, 200, 202)
 
 WS.verifyElementPropertyValue(response, 'error.text', 'Cannot Proceed Punch In Employee Already Punched In')
 

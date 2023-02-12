@@ -15,7 +15,7 @@
   &quot;parameters&quot;: [
     {
       &quot;name&quot;: &quot;grant_type&quot;,
-      &quot;value&quot;: &quot;password&quot;,
+      &quot;value&quot;: &quot;client_credentials&quot;,
       &quot;type&quot;: &quot;Text&quot;,
       &quot;contentType&quot;: &quot;&quot;
     },
@@ -53,6 +53,14 @@
       <type>Main</type>
       <value>multipart/form-data</value>
       <webElementGuid>d3688d74-5f91-4b59-947a-019fed6031d8</webElementGuid>
+   </httpHeaderProperties>
+   <httpHeaderProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>Authorization</name>
+      <type>Main</type>
+      <value>Bearer </value>
+      <webElementGuid>a994448a-d11f-4c51-8f93-8ab5ade49314</webElementGuid>
    </httpHeaderProperties>
    <katalonVersion>8.5.5</katalonVersion>
    <maxResponseSize>-1</maxResponseSize>

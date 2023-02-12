@@ -17,7 +17,7 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-response = WS.sendRequest(findTestObject('API_Chaining/02.Employee Detail'))
+response = WS.sendRequest(findTestObject('API_Chaining/01.Save Employee'))
 
 def slurper = new groovy.json.JsonSlurper()
 
@@ -25,13 +25,24 @@ def result = slurper.parseText(response.getResponseBodyContent())
 
 String apiPostLoanResponse = response.getResponseText()
 
-def value = result.data.nationality
+//def value = result.data.nationality
+def value1 = result
 
-def value1 = result.data.employeeId
+GlobalVariable.employeeId = value1
 
-println('cek value = ' + value)
+GlobalVariable.nationality = 'Indian'
 
-println('cek value1 = ' + value1)
+response1 = WS.sendRequestAndVerify(findTestObject('API_Chaining/02.Employee Detail'))
 
-WS.sendRequestAndVerify(findTestObject('API_Chaining/03.Update Employee Detail', [('success') : 'Successfully Updated']))
+def slurper1 = new groovy.json.JsonSlurper()
+
+def result1 = slurper1.parseText(response1.getResponseBodyContent())
+
+String apiPostLoanResponse1 = response1.getResponseText()
+
+def value2 = result1.nationality
+
+//GlobalVariable.userName = value2
+//println ("adsfsdafsdf "+ value1)
+WS.sendRequest(findTestObject('Reqress/UpdateUser', [('success') : 'Successfully Updated']))
 
